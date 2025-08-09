@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List App</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <main class="todo-app">
+        <header>
+            <h1>Todo List</h1>
+        </header>
+
+        <form id="task-form">
+            <input type="text" id="task-input" placeholder="Add a todo..." required>
+            <input type="date" id="date-input" required>
+            <button type="submit" class="add-btn" title="Add Task">+</button>
+        </form>
+
+        <div class="controls">
+            <select id="sort-select" class="control-btn">
+                <option value="default">Filter</option>
+                <option value="name-asc">Name (A-Z)</option>
+                <option value="name-desc">Name (Z-A)</option>
+                <option value="date-asc">Date (paling lama)</option>
+                <option value="date-desc">Date (paling baru)</option>
+            </select>
+            <button id="delete-all-btn">Delete All</button>
+        </div>
+
+        <div class="task-list-container">
+            <table class="task-table">
+                <thead>
+                    <tr>
+                        <th>Task</th>
+                        <th>Date</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="task-list-body">
+                    <tr class="empty-row">
+                        <td colspan="4">No task found</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

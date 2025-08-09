@@ -1,0 +1,192 @@
+:root {
+    --bg-dark: #0D1117;
+    --card-bg: #161B22;
+    --input-bg: #0D1117;
+    --primary-accent: #5865F2;
+    --primary-accent-hover: #4752C4;
+    --secondary-btn-bg: #30363D;
+    --secondary-btn-hover: #424953;
+    --border-color: #30363D;
+    --text-primary: #C9D1D9;
+    --text-secondary: #8B949E;
+    --danger-color: #F85149;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.todo-app {
+    width: 100%;
+    max-width: 700px;
+    background-color: var(--card-bg);
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+}
+
+header h1 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-weight: 600;
+}
+
+#task-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+#task-form input {
+    background-color: var(--input-bg);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-size: 1rem;
+    flex-grow: 1;
+}
+
+#task-form input[type="date"] {
+    flex-grow: 0;
+    min-width: 150px;
+}
+
+#task-form input:focus {
+    outline: none;
+    border-color: var(--primary-accent);
+}
+
+.add-btn {
+    background-color: var(--primary-accent);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    width: 45px;
+    height: 45px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.add-btn:hover {
+    background-color: var(--primary-accent-hover);
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    margin-bottom: 25px;
+    gap: 15px; 
+}
+
+.controls button,
+.controls select {
+    background-color: var(--secondary-btn-bg);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    padding: 8px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    font-family: 'Poppins', sans-serif; 
+    font-size: 0.9rem; 
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.controls button:hover,
+.controls select:hover {
+    background-color: var(--secondary-btn-hover);
+}
+
+.controls select:focus {
+    outline: none;
+    border-color: var(--primary-accent);
+}
+
+#sort-select {
+    width: 100%;
+    flex-grow: 1;
+}
+
+#delete-all-btn {
+    flex-shrink: 0;
+}
+
+.task-list-container {
+    width: 100%;
+}
+
+.task-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.task-table th {
+    text-align: left;
+    color: var(--text-secondary);
+    padding-bottom: 15px;
+    font-weight: 500;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+.task-table td {
+    padding: 15px 5px;
+    border-top: 1px solid var(--border-color);
+}
+
+/* --- Baris Tugas --- */
+.task-row .status-badge {
+    background-color: var(--secondary-btn-bg);
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.task-row .action-btn {
+    background: none;
+    border: none;
+    color: var(--danger-color);
+    font-size: 1.1rem;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.2s ease;
+}
+
+.task-row .action-btn:hover {
+    opacity: 1;
+}
+
+.empty-row td {
+    text-align: center;
+    padding: 40px 0;
+    color: var(--text-secondary);
+    font-style: italic;
+}
+
+.task-row.completed td:first-child {
+    text-decoration: line-through;
+    color: var(--text-secondary);
+}
+
+.task-row .task-text {
+    cursor: pointer;
+    display: inline-block;
+}
